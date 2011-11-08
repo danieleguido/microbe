@@ -1,0 +1,70 @@
+
+@font-face {
+	font-family: titillium400;
+	src: url('../fonts/TitilliumMaps29L001.otf');
+}
+
+@font-face{
+	font-family: titillium1;
+	src: url('../fonts/TitilliumMaps29L.otf');
+}
+@font-face{
+	font-family: cassia;
+	src: url('../fonts/CassiaXLig.otf');
+}
+
+body,html{
+	height:100%;
+	font-size:12px;
+	line-height:21px;
+	font-family:  cassia;
+}
+h1{
+	font: normal 60px Georgia, 'Times New Roman', Times, serif;
+	margin:15px 0px;	
+}
+h2{
+	font: normal 30px Georgia, 'Times New Roman', Times, serif;
+	margin:15px 0px;		
+}
+.title{
+	margin-top:24px;
+}
+.title
+.description{
+	margin: 0;
+	padding: 0;
+	font-family:  Georgia, 'Times New Roman', Times, serif;
+	font-weight: normal;
+	font-size: 18px;
+	line-height: 1.6em;
+	font-style: italic;
+	text-transform: none;
+	color: #070707;
+	margin:15px 0px;	
+}
+strong{
+	font-family: Georgia, 'Times New Roman', Times, serif;	
+	font-size: 1.2em;
+}
+.publication-title span{
+	line-height: 1.6em;
+	font-weight: bold;
+}
+
+.margin_top_1{
+	margin-top:6px;	
+}
+.margin_top_2{
+	margin-top:12px;	
+}
+
+
+.line{
+	border-bottom: 1px solid #dcdbdc;
+	margin-top:11px;
+	margin-bottom:24px;
+}
+.margin_top_3{
+	margin-top:18px;	
+}

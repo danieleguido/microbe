@@ -1,6 +1,3 @@
-
-    Paris, 8 nov 2011
-
 ° 
  ° welcome to microbe, the lightest-weight pseudo mwc made with php.
  Basically, it handle url redirection, class autoloader and a soft view architecture.
@@ -72,14 +69,6 @@
  ° the fonts.
  Thanks to free font titillium, http://www.campivisivi.net/old/titillium/
  I dont' know if it's used according to the licence, http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL, but it's an awesome font.
- Many thanks to Cassia font, too.
-
-°      °
- ° last but not least
- A full documented documentation will come soon. beware!
-
- The medialab Sciences Po staff
-
  
 
 
