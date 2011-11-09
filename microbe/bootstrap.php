@@ -16,13 +16,18 @@
  *
  *
  */
+ 
+ 
 
-
+# start the session
+session_start();
 
 # some global consts, not to be modified.
 define( "THE_MICROBE", dirname( __FILE__ ) );
 define( "BOOTSTRAP_SCRIPT", __FILE__ );
 define( "APPLICATION_PATH", THE_MICROBE."/app" );
+define( "CONTROLLERS_PATH", APPLICATION_PATH."/controllers" );
+define( "VIEWS_PATH", APPLICATION_PATH."/pages" );
 define( "LIB_PATH", THE_MICROBE."/lib" );
 
 
@@ -54,13 +59,7 @@ if( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) && $_SERVER[ 'REDIRECT_STATUS' ] == 4
 		exit;
 	} 
 	
-	if( !$microbe->isAppUrl() ) {
-		$microbe->setPage( THE_MICROBE_404_PAGE );
-	}
-	
+	$microbe->init();	
 }
- 
 
-# start the session
-session_start();
 ?>

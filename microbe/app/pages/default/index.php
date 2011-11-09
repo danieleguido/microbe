@@ -1,9 +1,10 @@
 
 <div class="publications margin_top_2">
-	<div class="last-publication margin_top_2 alpha grid_9">
+	<div class="last-publication margin_top_2 alpha omega grid_9">
+		<strong>The final archive of ready-to-use thigs...</strong>
+
     	<div class="publication-title grid_9 alpha omega">
-     		<strong>The final archive of ready-to-use thigs...</strong>
-     		<div class="grid_4 margin_top_1 alpha">The Hatter opened his eyes very wide on hearing this; but all he said was, "Why is a raven like a writing-desk?"
+     		     		<div class="grid_4 margin_top_1 alpha">The Hatter opened his eyes very wide on hearing this; but all he said was, "Why is a raven like a writing-desk?"
 "Come, we shall have some fun now!" thought Alice. "I'm glad they've begun asking riddles. — I believe I can guess that," she added aloud.
 "Do you mean that you think you can find out the answer to it?" said the March Hare.
 "Exactly so," said Alice.

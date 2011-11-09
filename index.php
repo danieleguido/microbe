@@ -30,7 +30,7 @@ include "microbe/bootstrap.php";
 		<div class="clear"></div>
 		
 		<div class="title alpha omega grid_12">
-    		<h1>This is the Lab.</h1>
+    		<h1>This is the Lab.!</h1>
     		<div class="description">
     		  	coming soon...
 			</div>	
@@ -41,7 +41,9 @@ include "microbe/bootstrap.php";
 		<div class="clear"></div>
     
     	<div class="page grid_9 alpha">
-    		<?php $microbe->doPage() ?>
+    		<?php $microbe->doPage();
+    		
+    		 ?>
     	</div>
     	
     	<div class="publications-list grid_3 margin_top_2 omega ">
