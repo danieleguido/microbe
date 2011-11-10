@@ -50,6 +50,10 @@ include THE_MICROBE."/functions.php";
 # start the microbe ( the constructor does really nothing :D )
 $microbe = new Microbe();
 
+# setup the database ORM (we use redbean, cfr. http://redbeanphp.com/)
+include LIB_PATH."/"."rb.php";
+
+
 # read the $_SERVER to find a 404 to route. 
 if( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) && $_SERVER[ 'REDIRECT_STATUS' ] == 404 ){
 	

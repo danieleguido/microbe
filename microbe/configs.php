@@ -5,7 +5,7 @@
  */
 
 # URL related const. To be modified, as you like. without the trailing slashes.
-define( "THE_URL", "/the-labs" );
+define( "THE_URL", "/opticc" );
 define( "THE_MICROBE_URL", THE_URL ."/microbe" );
 define( "STATIC_URL", THE_MICROBE_URL ."/static" );
 define( "THE_MICROBE_DEFAULT_PAGE", "default/index" );

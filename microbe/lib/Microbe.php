@@ -49,6 +49,8 @@ class Microbe{
 	
 	
 	public function init(){
+	   set_exception_handler( array($this, 'exceptionHandler') );
+	
 		 $this->vars = (object) array();
 		 
 		 # subract the url
@@ -82,12 +84,21 @@ class Microbe{
 		 
 	}
 	
+	public function exceptionHandler( $exception ){
+    print_r( $exception )   ;
+    if( $exception->getCode() == 404 ){
+      echo "opoioiujoijoi";
+    }
+    echo $exception->getMessage();
+  }
+	
 	public $errors = array();
 	
 	public function error( $error ){
 		$this->errors[] = $error;
 	}
 	
+  
 	/**
 	 * delegate a controller to serve the page
 	 */
@@ -104,6 +115,19 @@ class Microbe{
 			
 			# build. auto init and auto forward to action.
 			$this->controller = new $controller_class( $this );	
+			
+			# leave freedom to controller to change layout.
+			if( $this->controller->discard_route_to_layout ){
+			  if( !empty( $this->controller->layout ) ){
+          // @todo include new layout
+        } else{
+          // text only layout or whatsoever; :D
+          
+          exit();
+          
+        }
+				return;	
+			}
 			
 			# leave freedom to controller to change route.
 			if( $this->controller->discard_route_to_view ){
