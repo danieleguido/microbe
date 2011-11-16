@@ -44,15 +44,23 @@
  This below is my microbe config under apache2. Basically it's a 404 redirect,
  with a dummy alias. of course you can use the 303 redirect, or .htaccess.
  Cfr. the labs/microbe/bootstrap.php file for more info.
- However, every "not found" page should be handled by %/index.php,
+ However, every "not found" page will be redirected to %/index.php,
  the file which will contain your favourite (and lonely) layout
  
-  Alias /microbe /home/.../public/microbe
-  <Directory /home/.../public/microbe>
-        ErrorDocument 404 /labs/index.php
+ Alias /the-labs /home/daniele/public/labs/the-labs/microbe
+ <Directory /home/daniele/public/labs/the-labs/microbe>
+        RewriteEngine On
+        RewriteCond %{REQUEST_FILENAME} -s [OR]
+        RewriteCond %{REQUEST_FILENAME} -l [OR]
+        RewriteCond %{REQUEST_FILENAME} -d
+        RewriteRule ^.*$ - [NC,L]
+        RewriteRule ^.*$ /the-labs/index.php [NC,L]
+
+        #ErrorDocument 404 /the-labs/index.php
         Order deny,allow
         Allow from all
-  </Directory>
+ </Directory>
+
 
  The core of microbe is the bootstrap.php.
  In opur sample, there is an php "include ...bootstrap.php" at the very
