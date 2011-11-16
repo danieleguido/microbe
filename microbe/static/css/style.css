@@ -1,36 +1,36 @@
-
-@font-face {
-	font-family: titillium400;
-	src: url('../fonts/TitilliumMaps29L001.otf');
+.menu{	
+	margin: 0;
+	padding: 0;
+	height: 40px;
+	margin-top: 35px;
+	border-bottom: 1px solid #070707;
+	text-align:right;
+	
+}
+.menu li{ display:inline;position:relative; float:right; margin-top:6px}
+.menu li a{ height: 28px; display:block; padding: 2px 5px 5px 5px; font-size:11px; text-decoration:none; color:#070707}
+.menu li.selected a, .menu li a:hover{ border-bottom: 5px solid #070707; }
+.menu li.en a,.menu li.fr a{
+	padding: 2px 0 5px 5px;
+	width: 20px;
+	height: 28px;
 }
 
-@font-face{
-	font-family: titillium1;
-	src: url('../fonts/TitilliumMaps29L.otf');
-}
-@font-face{
-	font-family: cassia;
-	src: url('../fonts/CassiaXLig.otf');
+.menu li.en, .menu li.fr{ background-position-y:6px }
+.menu li.en{ background: url("http://medialab.sciences-po.fr/uploads/images/en_nb.png") top center  no-repeat; }
+.menu li.fr{ background: url("http://medialab.sciences-po.fr/uploads/images/fr_nb.png") top center  no-repeat; }
+
+.menu li.selected.fr,
+.menu li.fr:hover{
+	background: url("http://medialab.sciences-po.fr/uploads/images/fr.png") top center  no-repeat;
+	
 }
 
-body,html{
-	height:100%;
-	font-size:12px;
-	line-height:21px;
-	font-family:  cassia;
+.menu li.selected.en,
+.menu li.en:hover{
+	background: url("http://medialab.sciences-po.fr/uploads/images/en.png") top center  no-repeat;
 }
-h1{
-	font: normal 60px Georgia, 'Times New Roman', Times, serif;
-	margin:15px 0px;	
-}
-h2{
-	font: normal 30px Georgia, 'Times New Roman', Times, serif;
-	margin:15px 0px;		
-}
-.title{
-	margin-top:24px;
-}
-.title
+
 .description{
 	margin: 0;
 	padding: 0;
@@ -43,28 +43,18 @@ h2{
 	color: #070707;
 	margin:15px 0px;	
 }
-strong{
-	font-family: Georgia, 'Times New Roman', Times, serif;	
-	font-size: 1.2em;
-}
+
 .publication-title span{
 	line-height: 1.6em;
 	font-weight: bold;
 }
 
-.margin_top_1{
-	margin-top:6px;	
-}
-.margin_top_2{
-	margin-top:12px;	
-}
+.logo{ position: fixed; left: 0px; top: 0px; background: white; border-bottom: 1px solid #C9C3B9; z-index:999}
+.logo img{ padding: 6px;}
+.logo p{ font-size:10px; text-transform:uppercase; text-align:center;padding:0px; margin:0px}
 
-
-.line{
-	border-bottom: 1px solid #dcdbdc;
-	margin-top:11px;
-	margin-bottom:24px;
-}
-.margin_top_3{
-	margin-top:18px;	
-}
+/** footer, wrapper and other stuff */
+.footer, .push { height: 101px; }
+.wrapper { min-height: 100%; height: auto !important; height: 100%; margin: 0 auto -102px; }
+#footer{ background: #070707; height: 101px;margin-bottom: 0px;vertical-align: top; -moz-border-radius-topleft: 7px; -moz-border-radius-topright: 7px; -webkit-border-top-left-radius: 7px; -webkit-border-top-right-radius: 7px; border-top-left-radius: 7px 7px; border-top-right-radius: 7px 7px;}
+#footer img{ padding:16px}

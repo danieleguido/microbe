@@ -94,6 +94,8 @@
 		 $this->_errors[] = $error;
 	 }
 	 
+	 public function getMessages(){ return $this->_errors; }
+	 
 	 protected function _translation(  $identifier, $namespace ){
 		 return "You need to extends i18n_Locale";
 	 }

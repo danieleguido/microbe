@@ -50,8 +50,9 @@ include THE_MICROBE."/functions.php";
 # start the microbe ( the constructor does really nothing :D )
 $microbe = new Microbe();
 
+
 # read the $_SERVER to find a 404 to route. 
-if( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) && $_SERVER[ 'REDIRECT_STATUS' ] == 404 ){
+if( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) && isset( $_SERVER[ 'REDIRECT_URL' ]) ){
 	
 	# search firstly into direct routes
 	if( !empty( $lost_in_translations ) && in_array( $_SERVER[ 'REDIRECT_URL' ], array_keys( $lost_in_translations ) ) ){

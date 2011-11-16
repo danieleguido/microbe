@@ -23,6 +23,9 @@ class Controller{
 		}
 	}
 	
+	
+	
+	
 	public function ignoreView(){
 		$this->discard_route_to_view = true;
 		

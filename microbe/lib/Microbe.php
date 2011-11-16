@@ -47,16 +47,25 @@ class Microbe{
 		include APPLICATION_PATH."/pages/".$this->page.".php";
 	}
 	
+	/**
+	 * retrieve the full address of the page along with their GET data
+	 */
+	public function getAddress(){
+		if( empty( $this->address ) ) return THE_URL."/";
+		return THE_URL."/".implode( "/", $this->address );	
+	}
 	
 	public function init(){
 		 $this->vars = (object) array();
-		 
+		 # print_r($_SERVER);
 		 # subract the url
 		 $url = trim( substr( $_SERVER[ 'REDIRECT_URL' ], strlen( THE_URL ) ) );
 		 
 		 # trim trailing slashes
 		 $url = trim( $url, "/" );
 		 $this->routes =  explode("/", $url ) ;
+		 // copy routes array
+		 $this->address = $this->routes;
 		 
 		 if( empty( $this->routes ) ){
 		 	# set the default page
@@ -70,8 +79,7 @@ class Microbe{
 		 
 		 } 
 		 
-		 // copy routes array
-		 $this->address = $this->routes;
+		 
 		 
 		 if( count( $this->routes ) > 2 ){
 		 	// slice and return the first two as controller view actions. remaining parts are stored inside the $this->router variable 

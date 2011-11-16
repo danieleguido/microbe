@@ -7,5 +7,9 @@ class Silly extends Controller{
 	public function urlAction(){
 			
 	}
+	
+	public function formAction(){
+		
+	}
 }
 ?>
