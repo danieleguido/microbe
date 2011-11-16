@@ -1,12 +1,24 @@
-
     Paris, 8 nov 2011
 
 ° 
  ° welcome to microbe, the lightest-weight pseudo mwc made with php.
- Basically, it handle url redirection, class autoloader and a soft view architecture.
- The model-controller part of the cake, is on the run.
- Note: the 0.0.0 version does not handle controllers, views, models and layouts...
- Use at your own risks!
+ Basically, it tries to "emulate" Zend Framework mwc structure in a more
+ 'transparent' and 'easier' way. If you know how zend mwc works, you can skip
+ this introduction.
+ Like in Zend philosophy, in microbe the URL is the real protagonist, along with the
+ redirection mechanism, of course, which transforms the 404 http error
+ (the boring "not found" page) into a fully understandable route.
+ An url like http://microbes.com/whois/me is more than a simply "friendly url":
+ the server provides the full path which returns the "not found" error,
+ and a appropriate script can use these information the rest. 
+ (the path must not point to a real address!).
+ The first part, "whois", point to a controller class that is able to understand
+ the function defined by the "me" action part of the url.
+ The example above may result in a user page...
+
+ So, Microbe handles url redirection, class autoloader and a soft controller view architecture.
+
+ 
 
 °° 
  ° requirements
