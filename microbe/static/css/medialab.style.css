@@ -1,0 +1,154 @@
+/**
+ * CSS of medialab sciences-po.fr. More than guidelines.
+ * It defines a wrapper footer and contains useful classes and pre-defined styles for button and input textfield.
+ * Width and height for the input textfields are better specified by using width_1 width_2 classes (which could be overridden of course
+ * according to the grid you're using). use RIGHT BEFORE your specific stylesheet, so you can override classes.
+ *
+ * Note: do not specify here height and width with class selector, like [type="text"]. We left them blank intentionally.
+ * Use autocomplete="off" in youtr input to prevent chrome yellowing the input box...
+ *
+ * about the fonts: they're free of use, in the same folder there are their licences, too.
+ * abilitate only the fonts you actually use.
+ * fonts suggested by http://www.fontsquirrel.com/fonts/list/mostdownloaded
+ */
+
+
+@font-face {
+	font-family: titillium400;
+	src: url('../fonts/TitilliumMaps29L001.otf');
+}
+
+@font-face{
+	font-family: titillium;
+	src: url("http://jiminy.medialab.sciences-po.fr/labs/static/fonts/TitilliumMaps29L.otf");
+}
+
+@font-face{
+	font-family:quicksand;
+	src: url("http://jiminy.medialab.sciences-po.fr/labs/static/fonts/Quicksand_Book.otf");	
+}
+@font-face{
+	font-family:droid;
+	src: url("http://jiminy.medialab.sciences-po.fr/labs/static/fonts/DroidSans.ttf");	
+}
+@font-face{
+	font-family:sonus;
+	src: url("http://jiminy.medialab.sciences-po.fr/labs/static/fonts/SonusLig.otf");	
+}
+
+@font-face{
+	font-family:carthogothic;
+	src: url("http://jiminy.medialab.sciences-po.fr/labs/static/fonts/CartoGothicStd-Book.otf");
+}
+
+/** body stuff */
+body,html{
+	height:100%;
+	font-size:13px;
+	line-height:21px;
+	font-family:  droid;
+}
+
+
+/** titles, fonts to use and free text */
+h1{	font: normal 60px Georgia, 'Times New Roman', Times, serif;	margin:24px 0px 15px 0px;}
+h2{	margin:15px 0px; }
+p{ margin-top:12px; margin-bottom:6px; }
+
+
+
+
+/* forms: PREVENTING DEFAULT BEHAVIOUR */
+*:focus {outline: none;}
+input[type="text"], input[type="password"], textarea, select { outline: none; margin:0px;  font-family:droid; font-size:13px; }
+
+/** forms */
+input, textarea {  border: 1px solid #C9C3B9; text-indent: 3px;  }
+input[type="text"]{}
+input[type="password"]{}
+input[type="button"], button, .button{
+	background-color: #7FBF4D;
+	padding:2px 9px 1px 6px;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#7fbf4d), to(#63a62f));
+	background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+	background-image: linear-gradient(top, #7fbf4d, #63a62f);
+	border: 1px solid #63A62F;
+	border-bottom: 1px solid #5B992B;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-ms-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	-webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+	-moz-box-shadow: inset 0 1px 0 0 #96ca6d;
+	-ms-box-shadow: inset 0 1px 0 0 #96ca6d;
+	-o-box-shadow: inset 0 1px 0 0 #96ca6d;
+	box-shadow: inset 0 1px 0 0 #96ca6d;
+	color: white;
+	text-transform:uppercase;
+	line-height: 1;
+	
+	text-align: center;
+	text-shadow: 0 -1px 0 #4C9021;
+	
+}
+
+input[type="file"]{display:none}
+
+input[type="button"]:hover, button:hover, .button:hover{
+background-color: #76B347;
+background-image: -webkit-gradient(linear, left top, left bottom, from(#76b347), to(#5e9e2e));
+background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+background-image: linear-gradient(top, #76b347, #5e9e2e);
+-webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+-moz-box-shadow: inset 0 1px 0 0 #8dbf67;
+-ms-box-shadow: inset 0 1px 0 0 #8dbf67;
+-o-box-shadow: inset 0 1px 0 0 #8dbf67;
+box-shadow: inset 0 1px 0 0 #8dbf67;
+cursor: pointer;
+
+}
+
+input:focus { -webkit-box-shadow: 0px 0px 5px #cdcdcd;  -moz-box-shadow: 0px 0px 5px cdcdcd; box-shadow: 0px 0px 5px cdcdcd; border:1px solid #7F7A71;}
+
+/** set as block-level elements */
+.block{ display:block }
+
+/* error border and other error behaviour */
+.invalid{border-color:#CC0000; color:#73020C; }
+.invalid:focus{border-color:#7F7A71; color:black; }
+
+/** rounded border selector */
+.rounded_3{ -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
+
+/** width and height selectors, based upon a grid_12  (960px, 12 cols of 60 px each, 20px of gutter width)*/
+.width_1{ width:60px }
+.width_2{ width:140px }
+.width_3{ width:220px }
+.width_4{ width:300px }
+.width_5{ width:380px }
+.height_1{ height:24px }
+.height_2{ height:36px }
+.height_3{ height:48px }
+.height_4{ height:72px }
+.height_5{ height:96px }
+.height_6{ height:132px }
+
+
+/** margin top and bottm helpers */
+.margin_top_1{ margin-top:12px; }
+.margin_top_2{ margin-top:18px; }
+.margin_top_3{ margin-top:24px;	}
+.margin_bottom_1{ margin-bottom:6px; }
+.margin_bottom_2{ margin-bottom:12px; }
+.margin_bottom_3{ margin-bottom:18px; }
+
+/** other graphical elements */
+.line{	border-bottom: 1px solid #C9C3B9;	margin-top:11px; margin-bottom:24px; }
+.line_light{ border-bottom: 1px solid #E3DCD1;	margin-top:11px; margin-bottom:24px;}
