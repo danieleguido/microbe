@@ -14,7 +14,9 @@
   </Directory>
 
  *
- *
+ * Configuration files:
+ * THE_MICROBE."/configs.php" where useful PUBLIC configurations are (urls) 
+ * APPLICATION_PATH."/config.ini" for applications PRIVATE configs connections, password etc.. 
  */
  
  
@@ -22,7 +24,7 @@
 # start the session
 session_start();
 
-# some global consts, not to be modified.
+# some global consts, not to be modified. Real paths of microbe's places.
 define( "THE_MICROBE", dirname( __FILE__ ) );
 define( "BOOTSTRAP_SCRIPT", __FILE__ );
 define( "APPLICATION_PATH", THE_MICROBE."/app" );
@@ -30,8 +32,7 @@ define( "CONTROLLERS_PATH", APPLICATION_PATH."/controllers" );
 define( "VIEWS_PATH", APPLICATION_PATH."/pages" );
 define( "LIB_PATH", THE_MICROBE."/lib" );
 
-
-
+# some globals used by translation tools
 define( "STATIC_PATH", THE_MICROBE."/static"  );
 define( "LOCALE_PATH", STATIC_PATH."/locale" );
 
@@ -52,6 +53,11 @@ include THE_MICROBE."/functions.php";
 # start the microbe ( the constructor does really nothing :D )
 $microbe = new Microbe();
 
+# load app specific configuration. Note that you have to create the conbfig.ini file using the config.sample.ini as a model.
+$config =  @parse_ini_file ( APPLICATION_PATH ."/config.ini", true );
+
+# load the ORM - we use redbeanphp - to connect with the database. you can comment this feature. it uses the global config ini params defined above
+include THE_MICROBE."/orm.php";
 
 # read the $_SERVER to find a 404 to route. 
 if( isset( $_SERVER[ 'REDIRECT_STATUS' ] ) && isset( $_SERVER[ 'REDIRECT_URL' ]) ){

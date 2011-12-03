@@ -18,13 +18,15 @@ class Controller{
 		if( empty( $microbe->action ) ){
 			$this->indexAction();	
 		} else {
-			$action = $microbe->action."Action";
+			$action = $this->_action();
 			$this->$action();	
 		}
+		$this->drop();
 	}
 	
-	
-	
+	protected function _action(){
+		return str_replace("-","", $this->microbe->action )."Action";
+	}
 	
 	public function ignoreView(){
 		$this->discard_route_to_view = true;
@@ -39,6 +41,31 @@ class Controller{
 		
 	}
 	
+	
+
+	/**
+	 * this function may return a string value, or null or false.
+	 * This funciton return false only when the validator attached fails.
+	 */
+	public function getParam( $key, Ui_Validator &$validator = null ){
+		if( empty( $_REQUEST[ $key ] ) )
+			return null;
+		if( $validator == null )
+			return $_REQUEST[ $key ];
+			
+		if( !$validator->isValid( $_REQUEST[ $key ] )){
+			return false;
+		}
+		
+		return  $_REQUEST[ $key ];
+	}
+
+	/**
+	 * the end of all things, just before outputting the layout
+	 */	
+	public function drop(){
+		
+	}
 	public function indexAction(){
 		
 	}

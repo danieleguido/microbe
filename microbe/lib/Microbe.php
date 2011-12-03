@@ -146,6 +146,7 @@ class Microbe{
 		 if( count( $this->routes ) > 2 ){
 		 	// slice and return the first two as controller view actions. remaining parts are stored inside the $this->router variable 
 		 	$this->address = array_slice( $this->address, 0, 2 );
+			
 		 }
 		 
 		 return $this->forward( $this->address[ 0 ], $this->address[ 1 ] );
@@ -162,6 +163,7 @@ class Microbe{
 	 * delegate a controller to serve the page
 	 */
 	public function forward( $controller, $action = THE_MICROBE_DEFAULT_ACTION ){
+		$this->controller = $controller;
 		$this->action = $action;
 		$this->setPage( THE_MICROBE_404_PAGE );
 			
@@ -177,6 +179,7 @@ class Microbe{
 			
 			# leave freedom to controller to change route.
 			if( $this->controller->discard_route_to_view ){
+				echo "HLçDLçEDPLEPDEDP";
 				return;	
 			}
 		}
