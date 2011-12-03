@@ -13,11 +13,14 @@ include "microbe/bootstrap.php";
 <meta name="copyright" content="Licensed under GPL and MIT." />
 <meta name="description" content="microbe" />
 
-<title>microbe - the hidden lab</title>
+<title><?php echo translate(  $microbe->getHtmlTitle() ) ?></title>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo STATIC_URL ?>/css/grid.css">
 <link rel="stylesheet" type="text/css" href="http://jiminy.medialab.sciences-po.fr/labs/static/css/medialab.style.css">
 <link rel="stylesheet" type="text/css" href="<?php echo STATIC_URL ?>/css/style.css">
+
+<?php echo  $microbe->getStylesheets(); ?>
+
 
 <!--[if lte IE 7]>
 <link rel="stylesheet" href="css/ie.css" />
@@ -25,6 +28,8 @@ include "microbe/bootstrap.php";
 
 <!-- jquery -->
 <script type="text/javascript" src="http://jiminy.medialab.sciences-po.fr/labs/static/js/jquery-1.7.min.js"></script>
+
+<?php echo  $microbe->getScripts(); ?>
 
 </head>
 <body>
@@ -43,8 +48,17 @@ include "microbe/bootstrap.php";
 				<li class="en <?php echo I18n_Json::getInstance()->language == "en"? ' selected':''?>">
 					<a href="?lang=en" title="<?php echo translate("english") ?>"> </a>
 				</li>
+				<li class="<?php echo is_active_url( THE_URL."/docs" )?'selected':''?>">
+					<a href="<?php echo THE_URL ?>/docs"><?php echo translate("docs") ?></a>
+				</li>
 				<li class="<?php echo is_active_url( THE_URL."/guidelines" )?'selected':''?>">
 					<a href="<?php echo THE_URL ?>/guidelines"><?php echo translate("guidelines") ?></a>
+				</li>
+				<li class="<?php echo is_active_url( THE_URL."/gexf/bipartite" )?'selected':''?>">
+					<a href="<?php echo THE_URL ?>/gexf/bipartite"><?php echo translate("gexf-tools") ?></a>
+				</li>
+				<li class="<?php echo is_active_url( THE_URL."/heatgraph" )?'selected':''?>">
+					<a href="<?php echo THE_URL ?>/heatgraph"><?php echo translate("heat 'graphs'") ?></a>
 				</li>
 			</ul>
 		</div>
@@ -63,17 +77,13 @@ include "microbe/bootstrap.php";
 	
 			<div class="clear"></div>
 	    
-	    	<div class="page grid_9 alpha">
+	    	<div class="page grid_12 alpha omega">
 	    		<?php $microbe->doPage();
 	    		
 	    		 ?>
 	    	</div>
 	    	
-	    	<div class="publications-list grid_3 margin_top_2 omega ">
-	     		<ul>
-	     			<li><a href="<?php echo THE_URL?>/gexf/bipartite"><?php echo translate("bipartite a gexf graph") ?></a></li>
-	     		</ul>
-			</div>
+	    	
 			
 			
 			<div class="push grid_12 alpha omega"></div>

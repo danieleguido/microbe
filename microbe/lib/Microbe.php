@@ -1,12 +1,19 @@
 <?php
 /**
- * a dummy class. DO NOT USE ECHO HERE
+ * a dummy class. DO NOT USE ECHO HERE, please!
  */
 class Microbe{
 	
+	/**
+	 * the class constructor
+	 */
 	public function __construct( ){
+	
 	}	
 	
+	/**
+	 * The current page to load (pseudo view)
+	 */
 	public $page = THE_MICROBE_DEFAULT_PAGE;
 	
 	/** 
@@ -25,7 +32,7 @@ class Microbe{
 	public $vars;
 	
 	/**
-	 * the full route as has been understood
+	 * the full route as has been understood, a simple string
 	 */
 	public $routes;
 	
@@ -34,9 +41,64 @@ class Microbe{
 	 */
 	public $address;
 	
+	/**
+	 * loaded stylesheet of the page. Each stylesheet is an array item where the key is the url.
+	 * use the function addStylesheet() inside the controller class
+	 */
+	public $stylesheets = array();
+	
+	/**
+	 * loaded scripts. the same destiny of stylesheets
+	 */
+	public $scripts = array();
+	
+	/**
+	 * dummy setter.
+	 */
 	public function setPage( $page ){
 		
 		$this->page = $page;
+	}
+	
+	public function addScript( $url, array $properties=array() ){
+		$properties = array_merge( array("type"=>"text/javascript" ), $properties );
+		$this->scripts[ $url ] = $properties;
+	}
+	
+	/**
+	 * call this function in template php file to retrieve a list of javascripts.
+	 */
+	public function getScripts(){
+		$s = "";
+		foreach( $this->scripts as $url => $atts ){
+			$s .= '<script src="'.$url.'" '.iatts( $atts ).'></script>';
+		}
+		return $s;
+	}
+	
+	/**
+	 * call this function instde a controller class. append the page own stylesheet to be used with getScripts() in layout php file.
+	 */
+	public function addStylesheet( $url, array $properties=array() ){
+		$properties = array_merge( array("rel"=>"stylesheet", "type"=>"text/css", "media"=>"all"), $properties );
+		$this->stylesheets[ $url ] = $properties;
+	}
+
+	public function getHtmlTitle(){
+		if( empty( $this->htmlTitle ) ){
+			return THE_MICROBE_HTML_TITLE_ROOT." ".( empty( $this->title )? "the hidden lab": $this->title );
+		}
+		return $this->htmlTitle;
+	}
+	/**
+	 * call this function in template php file to retrieve a list of stylesheet.
+	 */
+	public function getStylesheets(){
+		$s = "";
+		foreach( $this->stylesheets as $url => $atts ){
+			$s .= '<link href="'.$url.'" '.iatts( $atts ).'/>';
+		}
+		return $s;
 	}
 	
 	public function cleanLayout(){

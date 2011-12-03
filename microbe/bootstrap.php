@@ -41,7 +41,9 @@ include THE_MICROBE."/configs.php";
 # autoloader function
 function __autoload( $class_name ) {
 	$class_filename = LIB_PATH."/".str_replace("_", "/", $class_name );
-	include $class_filename . '.php';
+	if( file_exists( $class_filename . '.php' ) ){
+		include $class_filename . '.php';
+	}
 }
 
 # include the common useful function

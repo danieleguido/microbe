@@ -9,7 +9,8 @@
 }
 .menu li{ display:inline;position:relative; float:right; margin-top:6px}
 .menu li a{ height: 28px; display:block; padding: 2px 5px 5px 5px; font-size:11px; text-decoration:none; color:#070707}
-.menu li.selected a, .menu li a:hover{ border-bottom: 5px solid #070707; }
+.menu li.selected a { border-bottom: 5px solid #070707; }
+.menu li a:hover{ color:#3A3634; border-bottom: 5px solid #3A3634; }
 .menu li.en a,.menu li.fr a{
 	padding: 2px 0 5px 5px;
 	width: 20px;

@@ -6,12 +6,13 @@
 
 # URL related const. To be modified, as you like. without the trailing slashes.
 define( "THE_URL", "/the-labs" );
+define( "THE_HOST", "http://jiminy.medialab.sciences-po.fr" );
 define( "THE_MICROBE_URL", THE_URL ."/microbe" );
 define( "STATIC_URL", THE_MICROBE_URL ."/static" );
 define( "THE_MICROBE_DEFAULT_PAGE", "default/index" );
 define( "THE_MICROBE_404_PAGE", "404" );
 define( "THE_MICROBE_DEFAULT_ACTION", "index" );
-
+define( "THE_MICROBE_HTML_TITLE_ROOT", "the lab of medialab Sciences-Po | " );
 
 /**
  * a dictionary of frieldy urls (provided by a 404 SERVER REDIRECTION,

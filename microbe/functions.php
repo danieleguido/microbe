@@ -12,4 +12,15 @@ function translate( $what ){
 function is_active_url( $address ){
 	return	$GLOBALS['microbe']->getAddress() == $address;	
 }
+
+/**
+ * array to html attributes function
+ */
+function iatts( array $atts ){
+	$s = "";
+	foreach( $atts as $k=>$v){
+		$s .= ' '.$k.'="'.str_replace('"','\"',$v).'"';
+	}
+	return $s;	
+}
 ?>
